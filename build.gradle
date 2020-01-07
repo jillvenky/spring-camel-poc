@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.wework'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation "org.apache.camel:camel-core:2.24.2"
+    implementation "org.apache.camel:camel-spring-boot-starter:2.24.2"
+    // implementation "org.apache.camel:camel-geocoder-starter:2.24.2"
+    implementation "org.apache.camel:camel-jms-starter:2.24.2"
+    implementation "org.apache.camel:camel-servlet-starter:2.24.2"
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-activemq")
+    compile("org.apache.activemq:activemq-broker:5.15.4")
+    testCompile("junit:junit")
+}
