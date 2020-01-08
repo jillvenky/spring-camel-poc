@@ -18,7 +18,6 @@ public class AggStrategy implements AggregationStrategy {
         String a = oldExchange.getIn().getBody(String.class);
         String b = newExchange.getIn().getBody(String.class);
 
-        // just avoid bad inputs by assuming its a 0 value
         String c = a + "," + b;
         oldExchange.getIn().setBody(c);
 
